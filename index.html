@@ -314,88 +314,79 @@
             </div>
         </div>
     </div>
-
-    <div class="grid-header" style="margin-top: 60px;">Strategic Synergy Matrix | 戰略支援矩陣</div>
+<div class="grid-header" style="margin-top: 60px;">Process Synergy Mapping | 流程與協同合作矩陣</div>
     <div class="matrix-box">
         <table class="matrix-table">
             <thead>
                 <tr>
-                    <th style="width: 20%;">處室單位</th>
-                    <th style="width: 40%;">你需要誰的「數位賦能/情報」支撐？(GET)</th>
-                    <th style="width: 40%;">你能給誰「關鍵數據/決策」的輸出？(GIVE)</th>
+                    <th style="width: 20%;">2030 一級主流程</th>
+                    <th style="width: 25%;">相關處室單位</th>
+                    <th style="width: 55%;">可能合作 (高階協同場景)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td style="font-weight: bold; color: #fff;">規劃</td>
-                    <td class="editable" contenteditable="true">
-                        <span class="pill">售後服務處</span> RMA 數據優化預測模型<br>
-                        <span class="pill">供應鏈專案暨數發處</span> 統一數據治理標準與 AI 工具
+                    <td style="font-weight: bold; color: #fff;" class="editable" contenteditable="true">
+                        1. 需求預測與產銷<br>
+                        <span style="font-size: 0.8em; color: var(--text-sub); font-weight: normal;">(Cognitive Forecasting)</span>
                     </td>
                     <td class="editable" contenteditable="true">
-                        <span class="pill">採購處 (Buyer)</span> 長線備料預警天數<br>
-                        <span class="pill">Customer Fulfillment</span> 動態可承諾量 (CTP)
-                    </td>
-                </tr>
-                <tr>
-                    <td style="font-weight: bold; color: #fff;">採購處 (Sourcer & Buyer)</td>
-                    <td class="editable" contenteditable="true">
-                        <span class="pill">規劃</span> 精準的選商參數與交期需求<br>
-                        <span class="pill">運籌管理</span> 全球運費與到貨 TCO 情報
+                        <span class="pill">規劃</span><br>
+                        <span class="pill">Customer Fulfillment</span><br>
+                        <span class="pill">供應鏈專案暨數發處</span>
                     </td>
                     <td class="editable" contenteditable="true">
-                        <span class="pill">規劃</span> MP 階段異常料況之即時反饋<br>
-                        <span class="pill">供應鏈專案暨數發處</span> 供應商數據清洗之現場邏輯
+                        <strong style="color: var(--accent-blue);">動態產銷連動：</strong>規劃單位依據 AI 即時市場感知模型，自動生成多套產銷劇本；Customer Fulfillment 則依據此劇本，與系統連動產出最精準的「動態可承諾量 (CTP)」，確保前端接單無縫接軌。數發處提供底層演算力。
                     </td>
                 </tr>
                 <tr>
-                    <td style="font-weight: bold; color: #fff;">運籌管理</td>
-                    <td class="editable" contenteditable="true">
-                        <span class="pill">採購處 (Buyer)</span> 提早 7 天的出貨預覽數據<br>
-                        <span class="pill">供應鏈專案暨數發處</span> 全球物流控制塔之平台串接
+                    <td style="font-weight: bold; color: #fff;" class="editable" contenteditable="true">
+                        2. 策略選商與採購<br>
+                        <span style="font-size: 0.8em; color: var(--text-sub); font-weight: normal;">(Autonomous Sourcing)</span>
                     </td>
                     <td class="editable" contenteditable="true">
-                        <span class="pill">Customer Fulfillment</span> 精準到貨時間預告 (ETA)<br>
-                        <span class="pill">規劃</span> 實際物流前置時間之修正建議
-                    </td>
-                </tr>
-                <tr>
-                    <td style="font-weight: bold; color: #fff;">售後服務處</td>
-                    <td class="editable" contenteditable="true">
-                        <span class="pill">Customer Fulfillment</span> 客戶端設備異常之早期通報
+                        <span class="pill">採購處 (Sourcer)</span><br>
+                        <span class="pill">採購處 (Buyer)</span><br>
+                        <span class="pill">全球MRO採購部</span><br>
+                        <span class="pill">供應鏈專案暨數發處</span>
                     </td>
                     <td class="editable" contenteditable="true">
-                        <span class="pill">規劃</span> 逆向回收料件之精準預測量<br>
-                        <span class="pill">採購處 (Sourcer)</span> 供應商零件損壞率評鑑扣分依據
+                        <strong style="color: var(--accent-blue);">風險防禦與無縫拋轉：</strong>Sourcer 建立包含 ESG 與地緣風險的智能供應商名冊，並設定自動觸發條件；當系統偵測缺料風險時，自動將「備援白名單」拋轉給 Buyer 進行無人工介入的下單動作。MRO 部門同步共享全球供應商信用數據。
                     </td>
                 </tr>
                 <tr>
-                    <td style="font-weight: bold; color: #fff;">全球MRO採購部</td>
-                    <td class="editable" contenteditable="true">
-                        <span class="pill">供應鏈專案暨數發處</span> 採購無紙化自動拋轉平台建置
+                    <td style="font-weight: bold; color: #fff;" class="editable" contenteditable="true">
+                        3. 生產交握與訂單交付<br>
+                        <span style="font-size: 0.8em; color: var(--text-sub); font-weight: normal;">(Adaptive Fulfillment)</span>
                     </td>
                     <td class="editable" contenteditable="true">
-                        <span class="pill">全體部門</span> 零延遲的低碳辦公與廠務物料支援
+                        <span class="pill">運籌管理</span><br>
+                        <span class="pill">生產單位</span><br>
+                        <span class="pill">採購處 (Buyer)</span><br>
+                        <span class="pill">Customer Fulfillment</span><br>
+                        <span class="pill">規劃</span>
+                        <span class="pill">供應鏈專案暨數發處</span>
+                    </td>
+                    <td class="editable" contenteditable="true">
+                        <strong style="color: var(--accent-blue);">自癒控制塔與承諾達交：</strong>Buyer 提供前端齊料預估，交由運籌管理單位排程。遇塞港或異常時，物流控制塔自動計算「換港/轉空運」的財務成本，交由 CF 與規劃單位聯合決策，以最低成本確保對頂級客戶的承諾達交。
                     </td>
                 </tr>
                 <tr>
-                    <td style="font-weight: bold; color: #fff;">Customer Fulfillment</td>
-                    <td class="editable" contenteditable="true">
-                        <span class="pill">規劃</span> 動態 CTP 數據<br>
-                        <span class="pill">運籌管理</span> 即時貨態與 ETA
+                    <td style="font-weight: bold; color: #fff;" class="editable" contenteditable="true">
+                        4. 售後服務與逆向<br>
+                        <span style="font-size: 0.8em; color: var(--text-sub); font-weight: normal;">(Circular Economy)</span>
                     </td>
                     <td class="editable" contenteditable="true">
-                        <span class="pill">全體部門</span> 客戶端最真實的達交滿意度與需求情報
+                        <span class="pill">售後服務處</span><br>
+                        <span class="pill">規劃</span><br>
+                        <span class="pill">採購處 (Sourcer)</span>
+                        <span class="pill">供應鏈專案暨數發處</span>
+                    </td>
+                    <td class="editable" contenteditable="true">
+                        <strong style="color: var(--accent-blue);">全生命週期價值循環：</strong>售後服務處將全球 RMA (退換貨) 數據與設備預測維護參數，直接反饋給規劃單位以調整前端備品水位；同時將零件損壞率數據轉交給 Sourcer，作為次世代新產品 (NPI) 選商與評鑑的扣分或加分依據。
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-
-    <footer>
-        © ProfetAI 2026 | Wiwynn SCM 2030 Dream Factory Workshop
-    </footer>
-</div>
-
-</body>
-</html>
+  
