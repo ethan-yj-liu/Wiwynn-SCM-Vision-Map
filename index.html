@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiwynn SCM 2030 戰略畫布 - 正式用語版</title>
+    <title>Wiwynn SCM 2030 戰略重塑畫布</title>
     <style>
         :root {
             --primary-bg: #0b1120;
@@ -13,7 +13,6 @@
             --accent-gold: #fbbf24;
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
-            --engine-bg: rgba(56, 189, 248, 0.1);
         }
 
         body {
@@ -53,23 +52,21 @@
             cursor: text;
         }
 
-        /* --- Vision Layer --- */
+        /* --- 1. Vision Layer --- */
         .vision-box {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 35px;
-            border-radius: 20px;
+            padding: 40px;
+            border-radius: 24px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
+        .vision-quote { font-size: 1.25em; line-height: 1.8; color: #e2e8f0; font-style: italic; }
+        .vision-title { font-size: 1.1em; font-weight: 800; color: var(--accent-blue); margin-top: 20px; display: block; text-transform: uppercase; letter-spacing: 2px;}
 
-        .vision-title { font-size: 1.6em; font-weight: 800; color: var(--accent-blue); margin-bottom: 15px; }
-        .vision-content { font-size: 1.15em; line-height: 1.8; color: #e2e8f0; }
-        .vision-highlight { color: var(--accent-gold); font-weight: bold; }
-
-        /* --- 8 Divisions Grid --- */
+        /* --- 2. Divisions Core Value Grid --- */
         .grid-header { margin-top: 40px; margin-bottom: 20px; font-weight: bold; color: var(--accent-blue); border-left: 4px solid var(--accent-blue); padding-left: 15px;}
         
         .divisions-grid {
@@ -86,19 +83,18 @@
             border-radius: 12px;
             display: flex;
             flex-direction: column;
+            transition: all 0.3s;
         }
+        .div-card:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
+        .div-name { color: var(--accent-blue); font-weight: 800; margin-bottom: 8px; font-size: 0.85em; text-transform: uppercase;}
+        .core-value-title { color: #fff; font-weight: bold; margin-bottom: 12px; font-size: 1.1em; }
+        
+        .div-mission { font-size: 0.88em; color: var(--text-sub); line-height: 1.6; flex-grow: 1; }
+        .div-mission strong { color: #e2e8f0; } /* 讓做什麼/不做什麼的標題稍亮 */
+        .div-hashtags { margin-top: 15px; color: var(--accent-gold); font-size: 0.75em; font-weight: bold; }
 
-        .div-name { color: #fff; font-weight: bold; margin-bottom: 12px; font-size: 0.95em; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;}
-        .div-mission { font-size: 0.85em; color: var(--text-sub); line-height: 1.5; flex-grow: 1; }
-        .div-node { margin-top: 12px; color: var(--accent-gold); font-size: 0.75em; font-weight: bold; text-transform: uppercase;}
-
-        /* --- Process Layer --- */
+        /* --- 3. Process Flow Layer --- */
         .process-section { margin-bottom: 60px; position: relative; }
-        .section-label { 
-            text-align: center; color: var(--text-sub); font-size: 0.85em; 
-            letter-spacing: 3px; margin-bottom: 20px; text-transform: uppercase;
-        }
-
         .process-steps {
             display: flex;
             justify-content: space-between;
@@ -106,287 +102,233 @@
             position: relative;
             z-index: 2;
         }
-
         .step-box {
-            flex: 1;
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            flex: 1; background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px; display: flex; flex-direction: column; overflow: hidden;
         }
+        .step-header { padding: 15px; background: rgba(255, 255, 255, 0.03); font-weight: bold; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .step-body { padding: 18px; font-size: 0.88em; color: var(--text-sub); line-height: 1.6; display: flex; flex-direction: column;}
+        .future-tag { color: var(--accent-blue); font-weight: 800; font-size: 0.7em; display: block; margin-bottom: 8px; }
+        
+        /* 劇本區塊樣式 */
+        .scenario-box {
+            margin-top: 12px;
+            padding: 10px 12px;
+            background: rgba(56, 189, 248, 0.05);
+            border-left: 3px solid var(--accent-gold);
+            font-size: 0.9em;
+            color: #cbd5e1;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+            flex-grow: 1;
+        }
+        .scenario-title { color: var(--accent-gold); font-weight: bold; font-style: normal; display: block; margin-bottom: 4px; font-size: 0.85em;}
 
-        .step-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        .step-header {
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.03);
-            font-weight: bold;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            font-size: 1em;
-        }
-
-        .step-body { padding: 18px; font-size: 0.88em; color: var(--text-sub); line-height: 1.6; flex-grow: 1; }
-        .future-tag {
-            color: var(--accent-blue);
-            font-weight: 800;
-            font-size: 0.7em;
-            display: block;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-
-        .step-arrow { display: flex; align-items: center; color: rgba(255,255,255,0.1); font-size: 1.2em; }
-
-        /* --- Feedback Loop --- */
-        .loop-container {
-            margin-top: -15px;
-            height: 100px;
-            position: relative;
-        }
-        .loop-arc {
-            position: absolute;
-            top: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 60px;
-            border: 2px dashed rgba(56, 189, 248, 0.2);
-            border-top: none;
-            border-radius: 0 0 100px 100px;
-        }
-        .loop-badge {
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%);
-            background: #0f172a;
-            border: 1px solid var(--accent-blue);
-            padding: 8px 25px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 0 25px var(--accent-glow);
-            z-index: 3;
-        }
-        .pulse-dot {
-            width: 8px; height: 8px;
-            background: var(--accent-blue);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
-        }
-
-        /* --- Support Matrix --- */
+        /* --- 4. Information Flow Matrix --- */
         .matrix-box {
             background: var(--card-bg);
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 30px;
-            margin-top: 10px;
             margin-bottom: 50px;
         }
         .matrix-table { width: 100%; border-collapse: collapse; }
         .matrix-table th { text-align: left; padding: 15px; color: var(--accent-blue); font-size: 0.9em; border-bottom: 2px solid rgba(255, 255, 255, 0.1); }
         .matrix-table td { padding: 20px 15px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; font-size: 0.9em; line-height: 1.6; }
-        .pill { 
-            background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); 
-            padding: 4px 10px; border-radius: 8px; font-size: 0.85em; 
-            margin-right: 5px; font-weight: bold; display: inline-block; margin-bottom: 5px;
-        }
+        .pill { background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 8px; font-size: 0.8em; margin-right: 5px; font-weight: bold; display: inline-block; margin-bottom: 4px;}
+        .pill-factory { background: rgba(251, 191, 36, 0.15); color: var(--accent-gold); padding: 2px 8px; border-radius: 8px; font-size: 0.8em; margin-right: 5px; font-weight: bold; display: inline-block; margin-bottom: 4px;}
 
         footer { margin-top: 50px; text-align: center; color: var(--text-sub); font-size: 0.8em; padding-bottom: 40px;}
-
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>Wiwynn SCM 2030 Strategy Canvas</h1>
-        <div style="color: var(--text-sub); font-size: 0.85em;">ProfetAI Consulting | Global Supply Chain Transformation</div>
+        <h1>Wiwynn SCM 2030 Process Reshaping Canvas</h1>
+        <div style="color: var(--text-sub); font-size: 0.85em;">ProfetAI Strategy Alignment | Facilitator Mode</div>
     </header>
 
     <div class="vision-box">
-        <div class="vision-title editable" contenteditable="true">Vision</div>
-        <div class="vision-content editable" contenteditable="true">
-            <strong>北極星：</strong>打造具備全方位韌性、綠色低碳永續與自駕能力的敏捷供應鏈，成為驅動業務增長與客戶信任的最強後盾。<br>
-            <strong>理想描述：</strong>資訊自動流動，人專注判斷；主動預警，問題在發生前就被看到並處理；供應鏈永遠有備案。我們以最敏捷的姿態，<span class="vision-highlight">完美兌現對客戶的每一次承諾</span>。
+        <div class="vision-quote editable" contenteditable="true">
+            盧希鵬老師曾說，AI 真正的威力是把以前「做不到的事」變成「基礎及格線」，但也警告若員工變快而流程不變，組織只會更卡。因此，本專案要求各單位在推動數位化與 AI 化的同時，必須同步重塑流程。我們不只是將紙本電子化，而是要消除局部優化導致的數位塞車，確保數據在供應鏈端到端無阻礙流動，將技術轉化為營運卓越的標準配備。
         </div>
+        <div class="vision-title">Wiwynn SCM 2030 轉型核心願景</div>
     </div>
 
-    <div class="grid-header">8 Divisions | Strategic Missions & Responsibility</div>
+    <div class="grid-header">8 Functions | Future Core Value & Behavioral Shifts</div>
     <div class="divisions-grid">
         <div class="div-card">
-            <div class="div-name editable" contenteditable="true">全球MRO採購部</div>
-            <div class="div-mission editable" contenteditable="true">實現全球廠區間接物料採購自動化整合，建立低碳物料採購基準。</div>
-            <div class="div-node editable" contenteditable="true">#Global #統管統購 #自動化</div>
+            <div class="div-name">全球MRO採購部</div>
+            <div class="core-value-title">全域效能整合</div>
+            <div class="div-mission editable" contenteditable="true">
+                <strong>做什麼：</strong>利用AI實現全球廠區後勤資源的透明與自動化，消除採購孤島以支撐韌性營運。<br>
+                <strong>不做什麼：</strong>不再處理繁瑣的紙本請購與人工比價。
+            </div>
+            <div class="div-hashtags">#全域整合 #後勤透明 #自動化</div>
         </div>
         <div class="div-card">
-            <div class="div-name editable" contenteditable="true">採購處 (Sourcer)</div>
-            <div class="div-mission editable" contenteditable="true">實現供應商風險庫的智能建構，將 ESG 指標自動納入選商標準。</div>
-            <div class="div-node editable" contenteditable="true">#戰略選商 #風險評估 #ESG</div>
+            <div class="div-name">採購處 (Sourcer)</div>
+            <div class="core-value-title">戰略價值開發</div>
+            <div class="div-mission editable" contenteditable="true">
+                <strong>做什麼：</strong>利用 AI 預判風險提前佈局並決定選商策略。<br>
+                <strong>不做什麼：</strong>不再單憑價格決策，拒絕高風險與高碳排供應商。
+            </div>
+            <div class="div-hashtags">#戰略預警 #ESG選商 #韌性布建</div>
         </div>
         <div class="div-card">
-            <div class="div-name editable" contenteditable="true">採購處 (Buyer)</div>
-            <div class="div-mission editable" contenteditable="true">實現訂單至交期零人工介入，與供應商數位連動以確保量產期齊料。</div>
-            <div class="div-node editable" contenteditable="true">#量產交期確保 #零人工介入 #數位連動</div>
+            <div class="div-name">採購處 (Buyer)</div>
+            <div class="core-value-title">採購自駕化</div>
+            <div class="div-mission editable" contenteditable="true">
+                <strong>做什麼：</strong>監控自駕系統執行交期，必要時人為介入。<br>
+                <strong>不做什麼：</strong>不再人工拋轉訂單與打電話日常追料。
+            </div>
+            <div class="div-hashtags">#自駕執行 #數位同步 #零人工介入</div>
         </div>
         <div class="div-card">
-            <div class="div-name editable" contenteditable="true">供應鏈專案暨數位發展處</div>
-            <div class="div-mission editable" contenteditable="true">實現全球統一數據治理標準的建立，推動自駕系統賦能與人才能力轉型。</div>
-            <div class="div-node editable" contenteditable="true">#數據治理 #變革管理 #AI賦能</div>
+            <div class="div-name">供應鏈專案暨數發處</div>
+            <div class="core-value-title">數位賦能</div>
+            <div class="div-mission editable" contenteditable="true">
+                <strong>做什麼：</strong>制定全球數據治理標準，推動 AI 工具與人才轉型。<br>
+                <strong>不做什麼：</strong>不再只被動接單寫程式，不容許局部系統變為數據孤島。
+            </div>
+            <div class="div-hashtags">#數據標準化 #變革管理 #AI賦能</div>
         </div>
         <div class="div-card">
-            <div class="div-name editable" contenteditable="true">規劃</div>
-            <div class="div-mission editable" contenteditable="true">實現全球庫存與產能的最優化配置，透過 AI 引擎精準感知市場需求。</div>
-            <div class="div-node editable" contenteditable="true">#產銷規劃 #AI預測 #動態配置</div>
+            <div class="div-name">規劃 (Planning)</div>
+            <div class="core-value-title">感知型指揮</div>
+            <div class="div-mission editable" contenteditable="true">
+                <strong>做什麼：</strong>運用數位雙生推演產銷劇本，即時分配全球資源。<br>
+                <strong>不做什麼：</strong>不再依賴落後指標與跨部門 Excel 試算表進行協調。
+            </div>
+            <div class="div-hashtags">#數位雙生 #即時感知 #動態產銷</div>
         </div>
         <div class="div-card">
-            <div class="div-name editable" contenteditable="true">運籌管理</div>
-            <div class="div-mission editable" contenteditable="true">實現全球物流的端到端可視化，動態規劃綠色物流與自癒備援路徑。</div>
-            <div class="div-node editable" contenteditable="true">#韌性交付 #自癒控制塔 #綠色物流</div>
+            <div class="div-name">運籌管理</div>
+            <div class="core-value-title">貨物追蹤與最佳化調動</div>
+            <div class="div-mission editable" contenteditable="true">
+                <strong>做什麼：</strong>監測物流即時狀況，異常時自動計算並啟動備援航線。<br>
+                <strong>不做什麼：</strong>不再手動查詢貨態與被動等待承攬商異常回報。
+            </div>
+            <div class="div-hashtags">#路徑優化 #智能異常處理 #端到端可視</div>
         </div>
         <div class="div-card">
-            <div class="div-name editable" contenteditable="true">售後服務處</div>
-            <div class="div-mission editable" contenteditable="true">實現逆向數據反饋前端優化預測，發展預測性維護以落實循環經濟。</div>
-            <div class="div-node editable" contenteditable="true">#反饋數據源頭 #循環經濟 #預測性維護</div>
+            <div class="div-name">售後服務處</div>
+            <div class="core-value-title">價值循環回饋</div>
+            <div class="div-mission editable" contenteditable="true">
+                <strong>做什麼：</strong>推動預測性維護，將逆向回收數據反饋優化前端規劃。<br>
+                <strong>不做什麼：</strong>不再只做被動的壞品維修，不浪費可循環的零件價值。
+            </div>
+            <div class="div-hashtags">#閉環反饋 #循環經濟 #預測維護</div>
         </div>
         <div class="div-card">
-            <div class="div-name editable" contenteditable="true">Customer Fulfillment</div>
-            <div class="div-mission editable" contenteditable="true">實現客戶訂單的完美達交，主動管理期待並作為達交承諾的最終守門員。</div>
-            <div class="div-node editable" contenteditable="true">#訂單達交承諾 #客戶信任 #完美交付</div>
+            <div class="div-name">Customer Fulfillment</div>
+            <div class="core-value-title">承諾完美達交</div>
+            <div class="div-mission editable" contenteditable="true">
+                <strong>做什麼：</strong>依據動態可交付能力精準給出承諾，主動引導與管理客戶期待。<br>
+                <strong>不做什麼：</strong>不再盲目接單或在資訊落差下對客戶給出無效承諾。
+            </div>
+            <div class="div-hashtags">#完美交付 #客戶信任 #動態可承諾量</div>
         </div>
     </div>
 
     <div class="process-section">
-        <div class="section-label">End-to-End SCM Value Chain & 2030 Digital Shift</div>
+        <div class="grid-header">2030 End-to-End Future Flow & Scenarios</div>
         <div class="process-steps">
             <div class="step-box">
-                <div class="step-header editable" contenteditable="true">1. 需求預測與產銷</div>
-                <div class="step-body editable" contenteditable="true">
-                    <span class="future-tag">Cognitive Forecasting</span>
-                    <strong>即時感知與數位雙生：</strong>擺脫被動預測。即時感知市場波動，透過數位雙生自動推演產銷決策劇本。
+                <div class="step-header">1. 需求預測與產銷</div>
+                <div class="step-body">
+                    <div>
+                        <span class="future-tag">COGNITIVE SENSING</span>
+                        即時感知市場與產能波動，自動生成動態決策劇本。
+                    </div>
+                    <div class="scenario-box editable" contenteditable="true">
+                        <span class="scenario-title">🎬 劇本展示：</span>
+                        系統偵測某雲端客戶 AI 伺服器需求即將飆升，數位雙生立即推演產能缺口，並自動生成全球料件調撥與產能最優計畫。
+                    </div>
                 </div>
             </div>
-            <div class="step-arrow">➔</div>
             <div class="step-box">
-                <div class="step-header editable" contenteditable="true">2. 策略選商與採購</div>
-                <div class="step-body editable" contenteditable="true">
-                    <span class="future-tag">Autonomous Sourcing</span>
-                    <strong>NPI 早期介入與 MP 動態防禦：</strong>研發期即啟動 AI 尋源。量產階段自動監控地緣風險與碳排指標，實現自動化決策。
+                <div class="step-header">2. 策略選商與採購</div>
+                <div class="step-body">
+                    <div>
+                        <span class="future-tag">AUTONOMOUS SOURCING</span>
+                        AI 預警風險並自動推薦備案，實現無紙化下單。
+                    </div>
+                    <div class="scenario-box editable" contenteditable="true">
+                        <span class="scenario-title">🎬 劇本展示：</span>
+                        針對急單新料件，系統掃描地緣風險庫避開潛在斷鏈區，幾秒內自動向符合 ESG 標準的備援供應商下達擴充訂單。
+                    </div>
                 </div>
             </div>
-            <div class="step-arrow">➔</div>
             <div class="step-box">
-                <div class="step-header editable" contenteditable="true">3. 生產交握與訂單交付</div>
-                <div class="step-body editable" contenteditable="true">
-                    <span class="future-tag">Adaptive Fulfillment</span>
-                    <strong>智慧製造連動與自癒控制塔：</strong>與工廠數據無縫對接。遇異常自動計算物流成本增幅與換港時效差異。
+                <div class="step-header">3. 生產交握與交付</div>
+                <div class="step-body">
+                    <div>
+                        <span class="future-tag">SELF-HEALING DELIVERY</span>
+                        與工廠數據串聯，異常時自動規劃備援物流方案。
+                    </div>
+                    <div class="scenario-box editable" contenteditable="true">
+                        <span class="scenario-title">🎬 劇本展示：</span>
+                        物料準時上線。出貨時突遇港口罷工，物流控制塔自動計算 TCO 增幅，瞬間切換備援空運方案，確保對客戶完美達交。
+                    </div>
                 </div>
             </div>
-            <div class="step-arrow">➔</div>
             <div class="step-box">
-                <div class="step-header editable" contenteditable="true">4. 售後服務與逆向</div>
-                <div class="step-body editable" contenteditable="true">
-                    <span class="future-tag">Circular Economy</span>
-                    <strong>預測維護與綠色循環：</strong>設備損壞前主動前置備品。智能逆向物流自動分級退回品，極大化提取價值。
-                </div>
-            </div>
-        </div>
-
-        <div class="loop-container">
-            <div class="loop-arc"></div>
-            <div class="loop-badge">
-                <div class="pulse-dot"></div>
-                <div class="editable" contenteditable="true" style="font-size: 0.85em; font-weight: bold; letter-spacing: 1px; color: var(--accent-blue);">
-                    CLOSED-LOOP FEEDBACK: 數據反饋優化前端預測與供應商戰略評鑑 (TCO & ESG)
+                <div class="step-header">4. 售後服務與逆向</div>
+                <div class="step-body">
+                    <div>
+                        <span class="future-tag">CIRCULAR FEEDBACK</span>
+                        售後數據回饋前端優化，實現維護預警與 ESG 目標。
+                    </div>
+                    <div class="scenario-box editable" contenteditable="true">
+                        <span class="scenario-title">🎬 劇本展示：</span>
+                        設備上線後，IoT 預判某零件即將衰退並主動寄送備品。替換下的零件進入價值提取流程，損壞數據即時反饋回採購端修正選商模型。
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-<div class="grid-header" style="margin-top: 60px;">Process Synergy Mapping | 流程與協同合作矩陣</div>
+
+    <div class="grid-header">Strategic Synergy & Information Flow | 主流程角色與資訊流動</div>
     <div class="matrix-box">
         <table class="matrix-table">
             <thead>
                 <tr>
-                    <th style="width: 20%;">2030 一級主流程</th>
-                    <th style="width: 25%;">相關處室單位</th>
-                    <th style="width: 55%;">可能合作 (高階協同場景)</th>
+                    <th style="width: 20%;">一級主流程</th>
+                    <th style="width: 30%;">相關核心角色</th>
+                    <th style="width: 50%;">粗略資訊流動</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td style="font-weight: bold; color: #fff;" class="editable" contenteditable="true">
-                        1. 需求預測與產銷<br>
-                        <span style="font-size: 0.8em; color: var(--text-sub); font-weight: normal;">(Cognitive Forecasting)</span>
-                    </td>
-                    <td class="editable" contenteditable="true">
-                        <span class="pill">規劃</span><br>
-                        <span class="pill">Customer Fulfillment</span><br>
-                        <span class="pill">供應鏈專案暨數發處</span>
-                    </td>
-                    <td class="editable" contenteditable="true">
-                        <strong style="color: var(--accent-blue);">動態產銷連動：</strong>規劃單位依據 AI 即時市場感知模型，自動生成多套產銷劇本；Customer Fulfillment 則依據此劇本，與系統連動產出最精準的「動態可承諾量 (CTP)」，確保前端接單無縫接軌。數發處提供底層演算力。
-                    </td>
+                    <td style="font-weight: bold;">1. 需求預測與產銷</td>
+                    <td><span class="pill">規劃</span> <span class="pill">CF</span> <span class="pill">數發處</span> <span class="pill-factory">工廠端</span></td>
+                    <td class="editable" contenteditable="true">市場需求訊號 ➔ AI 模擬劇本 ➔ 工廠端排程與產能 ➔ 動態可承諾量反饋業務。</td>
                 </tr>
                 <tr>
-                    <td style="font-weight: bold; color: #fff;" class="editable" contenteditable="true">
-                        2. 策略選商與採購<br>
-                        <span style="font-size: 0.8em; color: var(--text-sub); font-weight: normal;">(Autonomous Sourcing)</span>
-                    </td>
-                    <td class="editable" contenteditable="true">
-                        <span class="pill">採購處 (Sourcer)</span><br>
-                        <span class="pill">採購處 (Buyer)</span><br>
-                        <span class="pill">全球MRO採購部</span><br>
-                        <span class="pill">供應鏈專案暨數發處</span>
-                    </td>
-                    <td class="editable" contenteditable="true">
-                        <strong style="color: var(--accent-blue);">風險防禦與無縫拋轉：</strong>Sourcer 建立包含 ESG 與地緣風險的智能供應商名冊，並設定自動觸發條件；當系統偵測缺料風險時，自動將「備援白名單」拋轉給 Buyer 進行無人工介入的下單動作。MRO 部門同步共享全球供應商信用數據。
-                    </td>
+                    <td style="font-weight: bold;">2. 策略選商與採購</td>
+                    <td><span class="pill">Sourcer</span> <span class="pill">Buyer</span> <span class="pill">數發處</span></td>
+                    <td class="editable" contenteditable="true">NPI 風險雷達 ➔ 智能備選白名單 ➔ 自動化 PO 拋轉與狀態全鏈同步。</td>
                 </tr>
                 <tr>
-                    <td style="font-weight: bold; color: #fff;" class="editable" contenteditable="true">
-                        3. 生產交握與訂單交付<br>
-                        <span style="font-size: 0.8em; color: var(--text-sub); font-weight: normal;">(Adaptive Fulfillment)</span>
-                    </td>
-                    <td class="editable" contenteditable="true">
-                        <span class="pill">運籌管理</span><br>
-                        <span class="pill">生產單位</span><br>
-                        <span class="pill">採購處 (Buyer)</span><br>
-                        <span class="pill">Customer Fulfillment</span><br>
-                        <span class="pill">規劃</span>
-                        <span class="pill">供應鏈專案暨數發處</span>
-                    </td>
-                    <td class="editable" contenteditable="true">
-                        <strong style="color: var(--accent-blue);">自癒控制塔與承諾達交：</strong>Buyer 提供前端齊料預估，交由運籌管理單位排程。遇塞港或異常時，物流控制塔自動計算「換港/轉空運」的財務成本，交由 CF 與規劃單位聯合決策，以最低成本確保對頂級客戶的承諾達交。
-                    </td>
+                    <td style="font-weight: bold;">3. 生產交握與交付</td>
+                    <td><span class="pill">運籌管理</span> <span class="pill">Buyer</span> <span class="pill">CF</span> <span class="pill-factory">工廠端</span></td>
+                    <td class="editable" contenteditable="true">工廠齊料與完工預估 ➔ 物流自排程 ➔ 精準到貨 ETA 更新至客戶端。</td>
                 </tr>
                 <tr>
-                    <td style="font-weight: bold; color: #fff;" class="editable" contenteditable="true">
-                        4. 售後服務與逆向<br>
-                        <span style="font-size: 0.8em; color: var(--text-sub); font-weight: normal;">(Circular Economy)</span>
-                    </td>
-                    <td class="editable" contenteditable="true">
-                        <span class="pill">售後服務處</span><br>
-                        <span class="pill">規劃</span><br>
-                        <span class="pill">採購處 (Sourcer)</span>
-                        <span class="pill">供應鏈專案暨數發處</span>
-                    </td>
-                    <td class="editable" contenteditable="true">
-                        <strong style="color: var(--accent-blue);">全生命週期價值循環：</strong>售後服務處將全球 RMA (退換貨) 數據與設備預測維護參數，直接反饋給規劃單位以調整前端備品水位；同時將零件損壞率數據轉交給 Sourcer，作為次世代新產品 (NPI) 選商與評鑑的扣分或加分依據。
-                    </td>
+                    <td style="font-weight: bold;">4. 售後服務與逆向</td>
+                    <td><span class="pill">售後服務</span> <span class="pill">規劃</span> <span class="pill">Sourcer</span> <span class="pill-factory">工廠品管</span></td>
+                    <td class="editable" contenteditable="true">終端運行數據 ➔ 備品預測 ➔ 零組件損壞評鑑回傳至工廠與選商模型。</td>
                 </tr>
             </tbody>
         </table>
     </div>
-  
+
+    <footer>
+        © ProfetAI 2026 | Wiwynn SCM 2030 Strategy Canvas
+    </footer>
+</div>
+
+</body>
+</html>
